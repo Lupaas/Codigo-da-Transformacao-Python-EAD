@@ -27,7 +27,7 @@
 # Inicializando as variáveis para o Produto 1 (Açaí Tradicional)
 p1_nome = "Açaí Tradicional"
 p1_estoque = 50
-p1_preco = 24.00
+p1_preco = 16.00
 p1_validade = "12/12/2026 "
 p1_descricao = "Açaí tradicional, um clássico que nunca falha."
 
@@ -35,7 +35,7 @@ p1_descricao = "Açaí tradicional, um clássico que nunca falha."
 # Inicializando as variáveis para o Produto 2 (Açaí Premium)
 p2_nome = "Açaí Premium"
 p2_estoque = 50
-p2_preco = 34.00
+p2_preco = 24.00
 p2_validade = "12/12/2026"
 p2_descricao = "Açaí premium, 500ml de pura tentação!"
 
@@ -43,13 +43,20 @@ p2_descricao = "Açaí premium, 500ml de pura tentação!"
 # Inicializando as variáveis para o Produto 3 (Açaí Especial)
 p3_nome = "Açaí Especial"
 p3_estoque = 50
-p3_preco = 47.00
+p3_preco = 35.00
 p3_validade = "12/12/2026"
 p3_descricao = "Açaí especial, um tigelão de 1,5L feito para quem não brinca em serviço!."
 
 
 # Inicializando as variáveis para o Tamanho do Açaí
-cardapio_acai = ("Tradicional", "Premium", "Especial")
+cardapio_acai = ("tradicional", "premium", "especial")
+topping_acai = ("frutas", "granola", "paçoca", "nutella")
+
+
+#Iniciando as variáveis para o Histórico de vendas do Açaí
+historico_vendas = []
+
+
 
 while True:
    print('-' * 48 + '\n')
@@ -148,6 +155,14 @@ while True:
                     total = qtd_venda * p1_preco
                     print(f'\n✅ Venda realizada! Total: R$ {total:.2f}')
                     print(f'Estoque atual de {p1_nome}: {p1_estoque} unidades.')
+
+                    venda_atual = {
+                        "produto": p1_nome,
+                        "quantidade": qtd_venda,
+                        "total": total
+                     }
+                    
+                    historico_vendas.append(venda_atual)
                 else:
                     print(f'❌ Estoque insuficiente! Temos apenas {p1_estoque}.')
             
@@ -159,6 +174,14 @@ while True:
                     total = qtd_venda * p2_preco
                     print(f'\n✅ Venda realizada! Total: R$ {total:.2f}')
                     print(f'Estoque atual de {p2_nome}: {p2_estoque} unidades.')
+
+                    venda_atual = {
+                        "produto": p2_nome,
+                        "quantidade": qtd_venda,
+                        "total": total
+                     }
+                    
+                    historico_vendas.append(venda_atual)
                 else:
                     print(f'❌ Estoque insuficiente! Temos apenas {p2_estoque}.')
                     
@@ -170,6 +193,14 @@ while True:
                     total = qtd_venda * p3_preco
                     print(f'\n✅ Venda realizada! Total: R$ {total:.2f}')
                     print(f'Estoque atual de {p3_nome}: {p3_estoque} unidades.')
+
+                    venda_atual = {
+                        "produto": p3_nome,
+                        "quantidade": qtd_venda,
+                        "total": total
+                     }
+                    
+                    historico_vendas.append(venda_atual)
                 else:
                     print(f'❌ Estoque insuficiente! Temos apenas {p3_estoque}.')
             
@@ -183,33 +214,64 @@ while True:
 
     tamanho_acai = input('\n''Digite o tamanho do açaí que você quer: ')
 
-    if tamanho_acai == 'Tradicional':
+    if tamanho_acai == 'tradicional':
      print(f'✅ Anotado! Você selecionou: {p1_nome} 300ml''\n')
 
-    elif tamanho_acai == 'Premium':
+    elif tamanho_acai == 'premium':
      print(f'✅ Anotado! Você selecionou: {p2_nome} 500ml''\n')
 
-    elif tamanho_acai  == 'Especial':
+    elif tamanho_acai  == 'especial':
      print(f'✅ Anotado! Você selecionou: {p3_nome} 1,5L''\n')
 
     else:
-     print(f'Desculpe, nós não temos essa opção no cardápio. Tente novamente')
+     print('Desculpe, nós não temos essa opção no cardápio. Tente novamente')
 
+
+    adicional_acai = input('\n''Digite o topping que você quer adicionar: ')
+
+    if adicional_acai == 'frutas':
+     print(f'✅ Anotado! Você selecionou: {adicional_acai}')
+
+    elif adicional_acai == 'granola':
+     print(f'✅ Anotado! Você selecionou: {adicional_acai}')
+
+    elif adicional_acai == 'paçoca':
+     print(f'✅ Anotado! Você selecionou: {adicional_acai}')
+
+    elif adicional_acai == 'nutella':
+     print(f'✅ Anotado! Você selecionou: {adicional_acai}')
+
+    else:
+     print('Desculpe, nós não temos essa opção no cardápio. Tente novamente')
+
+
+    if tamanho_acai in (f'{cardapio_acai}') and adicional_acai in (f'{topping_acai}'):
+        print('\n'f'Esse é o resumo do seu pedido: Açaí {tamanho_acai} com {adicional_acai}!')
 
    elif opcao__definida == '5':
-    print('Agora, vamos escolher os Toppings!')
+    print('Promoções')
 
    elif opcao__definida == 6:
-    print('Visualizando a sua localização..')
+    print('Formas de Pagamento')
 
    elif opcao__definida == 7:
-    print('Entrando em contato...')
+    print('Modos de Entrega')
 
-   elif opcao__definida == 8:
-    print('Aproveite esse tempo de entrega e nos siga nas redes sociais!...')
+   elif opcao__definida == '8':
+    print('Bem-vindo ao Histórico de vendas!''\n')
+    
+    if historico_vendas == []:
+        print('Humm, parece que não foi feita nenhuma venda ainda. Tente novamente!')
+    
+    else:
+        for venda in historico_vendas:
+            print(f"Produto: {venda['produto']}")
+            print(f"Quantidade: {venda['quantidade']}")
+            print(f"Total: R$ {venda['total']:.2f}"'\n')
+            print('-' * 25)
 
    elif opcao__definida == 9:
-    print('Pronto! Gostariamos que você enviasse o seu feedback')
+    print('Contato')
 
    else:
     print('Humm, Algo deu errado. Tente Novamente!')
