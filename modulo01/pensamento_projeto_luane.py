@@ -49,7 +49,7 @@ p3_descricao = "Açaí especial, um tigelão de 1,5L feito para quem não brinca
 
 
 # Inicializando as variáveis para o Tamanho do Açaí
-cardapio_acai = ("tradicional", "premium", "especial")
+tamanho_acai = ("tradicional", "premium", "especial")
 topping_acai = ("frutas", "granola", "paçoca", "nutella")
 
 
@@ -205,28 +205,29 @@ while True:
                     print(f'❌ Estoque insuficiente! Temos apenas {p3_estoque}.')
             
             else:
-                print('🔥 Erro: Produto não encontrado!')
+                print('👀 Erro: Produto não encontrado!')
 
 
    elif opcao__definida == '4':
     print('Bem vindo ao nosso Cardápio! \n')
-    print(cardapio_acai)
+    print(tamanho_acai)
 
-    tamanho_acai = input('\n''Digite o tamanho do açaí que você quer: ')
+    selecionar_tam = input('\n''Digite o tamanho do açaí que você quer: ')
 
-    if tamanho_acai == 'tradicional':
+    if selecionar_tam == 'tradicional':
      print(f'✅ Anotado! Você selecionou: {p1_nome} 300ml''\n')
 
-    elif tamanho_acai == 'premium':
+    elif selecionar_tam == 'premium':
      print(f'✅ Anotado! Você selecionou: {p2_nome} 500ml''\n')
 
-    elif tamanho_acai  == 'especial':
+    elif selecionar_tam  == 'especial':
      print(f'✅ Anotado! Você selecionou: {p3_nome} 1,5L''\n')
 
     else:
      print('Desculpe, nós não temos essa opção no cardápio. Tente novamente')
 
-
+    print('Abaixo, está a nossa lista de adicionais:')
+    print(topping_acai)
     adicional_acai = input('\n''Digite o topping que você quer adicionar: ')
 
     if adicional_acai == 'frutas':
@@ -245,8 +246,8 @@ while True:
      print('Desculpe, nós não temos essa opção no cardápio. Tente novamente')
 
 
-    if tamanho_acai in (f'{cardapio_acai}') and adicional_acai in (f'{topping_acai}'):
-        print('\n'f'Esse é o resumo do seu pedido: Açaí {tamanho_acai} com {adicional_acai}!')
+    if selecionar_tam in (f'{tamanho_acai}') and adicional_acai in (f'{topping_acai}'):
+        print('\n'f'Esse é o resumo do seu pedido: Açaí {selecionar_tam} com {adicional_acai}!')
 
    elif opcao__definida == '5':
     print('Promoções')
@@ -258,7 +259,7 @@ while True:
     print('Modos de Entrega')
 
    elif opcao__definida == '8':
-    print('Bem-vindo ao Histórico de vendas!''\n')
+    print('\n''Bem-vindo ao Histórico de vendas!''\n')
     
     if historico_vendas == []:
         print('Humm, parece que não foi feita nenhuma venda ainda. Tente novamente!')
@@ -272,6 +273,10 @@ while True:
 
    elif opcao__definida == 9:
     print('Contato')
+
+   elif opcao__definida == '0':
+      print('Finalizando o programa...')
+      break
 
    else:
     print('Humm, Algo deu errado. Tente Novamente!')
