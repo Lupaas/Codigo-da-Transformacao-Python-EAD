@@ -17,14 +17,14 @@ conteudo = [
 ]
 
 
-
+# Cria e mostra o arquivo criado
 with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
     arquivo.writelines(conteudo)
 print(f"✅ Arquivo '{nome_arquivo}' criado e escrito com sucesso!")
 
 
 
-
+# Lê e abre o arquivo criado
 print("\n--- Lendo o conteúdo do arquivo TXT ---")
 with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
     texto = arquivo.read()

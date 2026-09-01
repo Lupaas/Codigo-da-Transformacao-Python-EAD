@@ -21,7 +21,7 @@ with open(nome_arquivo, "w", newline="", encoding="utf-8-sig") as arquivo:
 
 print(f"✅ Notas salvas no arquivo '{nome_arquivo}'!")
 
-# --- CARREGAR E EXIBIR NOTAS ---
+# Lê e exibe o conteudo de dentro do arquivo criado
 print("\n--- Lendo o arquivo CSV de Notas ---")
 with open(nome_arquivo, "r", encoding="utf-8-sig") as arquivo:
     leitor = csv.DictReader(arquivo)

@@ -37,5 +37,6 @@ print("\n--- Carregando dados do arquivo JSON ---")
 with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
     clientes_carregados = json.load(arquivo)
 
+# Mostra o nome completo e o e-mail do cliente que está no arquivo
 for cliente in clientes_carregados:
     print(f"Cliente: {cliente['Nome completo']} | E-Mail: {cliente['E-Mail']}")
