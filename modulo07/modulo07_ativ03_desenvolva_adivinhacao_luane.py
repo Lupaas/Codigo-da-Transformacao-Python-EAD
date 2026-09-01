@@ -1,8 +1,3 @@
-'''
-
-
-'''
-
 import random
 import math
 
@@ -15,7 +10,7 @@ def jogar():
     
     max_tentativas = math.ceil(math.log2(limite_superior - limite_inferior + 1))
     
-    
+# Inicia o sistema de menu do "Jogo da Adivinhação"
     print("=== JOGO DA ADIVINHAÇÃO ===")
     print(f"Tente adivinhar o número entre {limite_inferior} e {limite_superior}.")
     print(f"Você tem {max_tentativas} tentativas!\n")

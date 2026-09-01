@@ -1,10 +1,3 @@
-'''
-
-
-
-
-'''
-
 # Criando uma variavel que recebe "dados_arquivo.txt".
 nome_arquivo = "dados_arquivo.txt"
 
