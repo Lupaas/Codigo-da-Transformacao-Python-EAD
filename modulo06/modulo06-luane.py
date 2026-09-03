@@ -1,4 +1,4 @@
-leitura_arquivo = open('leitura_arquivo_luane.txt', 'r', encoding='utf-8')
+leitura_arquivo = open('meus_arquivos_luane.txt', 'r', encoding='utf-8')
 
 conteudo_arquivo = leitura_arquivo.readlines()
 

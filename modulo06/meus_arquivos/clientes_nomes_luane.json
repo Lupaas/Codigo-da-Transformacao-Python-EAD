@@ -1,0 +1,23 @@
+[
+  {
+    "Nome completo": "Ivan Silva",
+    "Idade": "40 anos",
+    "CEP": "02899-000",
+    "ResgMatr": "947541",
+    "E-Mail": "ivanpaulino@mail.com"
+  },
+  {
+    "Nome completo": "Yasmin Santos",
+    "Idade": "17 anos",
+    "CEP": "09876-000",
+    "ResgMatr": "971123",
+    "E-Mail": "yasminssantos@gmail.com"
+  },
+  {
+    "Nome completo": "Luane Penafort",
+    "Idade": "17 anos",
+    "CEP": "09752-000",
+    "ResgMatr": "976352",
+    "E-Mail": "luanesantana@mail.com"
+  }
+]
