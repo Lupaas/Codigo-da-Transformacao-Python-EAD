@@ -1,0 +1,15 @@
+# --- Módulo da Pessoa 1: Visão Computacional (Lari) ---
+opencv-python>=4.9.0
+numpy>=1.26.0
+
+# --- Módulo da Pessoa 2: Back-end e Banco de Dados (Lu) ---
+# sqlite3, json e os já vêm embutidos no Python.
+# Não precisam ser instalados via pip.
+
+# --- Módulo da Pessoa 3: Interface Gráfica / Front-end (Yas) ---
+customtkinter>=5.2.0
+Pillow>=10.0.0
+
+# Observação:
+# tkinter/ttk/filedialog/messagebox já fazem parte da instalação
+# padrão do Python no Windows e não precisam entrar aqui.
